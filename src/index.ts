@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import express from 'express'
 
 import products from './routes/person'
@@ -10,6 +9,9 @@ import { Sequelize } from 'sequelize'
 
 const app = express()
 app.use(express.json())
+
+// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing
+const PORT = process.env.PORT || 3000
 
 dotenv.config()
 
@@ -39,7 +41,6 @@ app.use('/api/ubication', ubication)
 app.use('/api/product', product)
 app.use('/api/user', user)
 
-// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`server running in port ${process.env.PORT ? process.env.PORT : 3000}`)
+app.listen(PORT, () => {
+  console.log(`server running in port ${PORT}`)
 })
