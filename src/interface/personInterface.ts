@@ -13,16 +13,18 @@ export enum Visibility {
   Poor = 'poor'
 }
 
-export interface DiaryEntry {
-  id: number
-  date: string
-  weather: Weather
-  visibility: Visibility
-  comment: string
+export interface Person {
+  id: string
+  nit: string
+  name: string
+  address: string
+  cityId: number
+  email: string
+  phoneNumber: string
 }
 
 // export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
 
-export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, 'comment'>
+// export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, 'comment'>
 
-export type NewDiaryEntry = Omit<DiaryEntry, 'id'>
+export type NewPerson = Omit<Person, 'id'>
