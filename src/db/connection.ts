@@ -20,7 +20,7 @@ export class Connection {
         process.env.USER_DB as string,
         process.env.PASSWORD_DB as string,
         {
-          host: process.env.PORT as string,
+          host: process.env.PORT_DB as string,
           dialect: 'postgres',
           define: {
             timestamps: false

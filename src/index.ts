@@ -39,6 +39,7 @@ app.use('/api/ubication', ubication)
 app.use('/api/product', product)
 app.use('/api/user', user)
 
-app.listen(process.env.PORT, () => {
+// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+app.listen(process.env.PORT || 3000, () => {
   console.log(`server running in port ${process.env.PORT ? process.env.PORT : 3000}`)
 })
