@@ -23,8 +23,4 @@ export interface Person {
   phoneNumber: string
 }
 
-// export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
-
-// export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, 'comment'>
-
 export type NewPerson = Omit<Person, 'id'>

@@ -21,7 +21,7 @@ export class Connection {
         process.env.PASSWORD_DB as string,
         {
           host: process.env.HOST_DB as string,
-          dialect: 'postgres',
+          dialect: 'mysql',
           define: {
             timestamps: false
           },
