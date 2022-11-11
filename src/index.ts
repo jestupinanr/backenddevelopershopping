@@ -7,9 +7,11 @@ import user from './routes/user'
 import order from './routes/order'
 import dotenv from 'dotenv'
 import { Sequelize } from 'sequelize'
+import cors from 'cors'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const PORT = 3000
 

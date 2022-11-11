@@ -62,13 +62,14 @@ router.post('/create', (req, res) => {
 
 router.get('/login', (req, res) => {
   const loginEntry = toLoginEntry(req.body)
-  UserModel().sequelize?.query(`SELECT * FROM user
+  UserModel().sequelize?.query(
+    `SELECT * FROM user
     INNER JOIN person
     ON person.id = user.personId
     WHERE user.password = ? AND person.email = ?`, {
-    replacements: [`${loginEntry.password}`, `${loginEntry.email}`],
-    type: QueryTypes.SELECT
-  }).then(resp => {
+      replacements: [`${loginEntry.password}`, `${loginEntry.email}`],
+      type: QueryTypes.SELECT
+    }).then(resp => {
     if (resp.length === 0 || resp === null) {
       res.status(400).send({
         data: 'not-found'
